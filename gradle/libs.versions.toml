@@ -10,6 +10,9 @@ paperweight = "1.5.11"
 shadow = "8.1.1"
 spotless = "6.23.3"
 paper = "1.20.4-R0.1-SNAPSHOT"
+accesswidener = "2.1.0"
+tiny-remapper = "0.10.1"
+zt-zip = "1.17"
 
 [libraries]
 jetbrains-annotations = { module = "org.jetbrains:annotations", version.ref = "jetbrains" }
@@ -21,3 +24,6 @@ mixinExtras = { group = "io.github.llamalad7", name = "mixinextras-common", vers
 build-paperweight = { module = "io.papermc.paperweight.userdev:io.papermc.paperweight.userdev.gradle.plugin", version.ref = "paperweight" }
 build-shadow = { module = "com.github.johnrengelman:shadow", version.ref = "shadow" }
 build-spotless = { module = "com.diffplug.spotless:spotless-plugin-gradle", version.ref = "spotless" }
+build-accesswidener = { module = "net.fabricmc:access-widener", version.ref = "accesswidener" }
+build-tiny-remapper = { module = "net.fabricmc:tiny-remapper", version.ref = "tiny-remapper" }
+build-zt-zip = { module = "org.zeroturnaround:zt-zip", version.ref = "zt-zip" }

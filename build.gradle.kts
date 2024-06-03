@@ -1,5 +1,6 @@
 plugins {
   id("mod.base-conventions")
+  id("plugin.IgnitePlugin")
 }
 
 dependencies {
@@ -10,4 +11,8 @@ dependencies {
   compileOnly(libs.mixinExtras)
 
   paperweight.paperDevBundle(libs.versions.paper)
+}
+
+tasks.named("compileJava") {
+  dependsOn(tasks.named("applyAccessWidener"))
 }

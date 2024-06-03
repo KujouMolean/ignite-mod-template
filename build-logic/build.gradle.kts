@@ -1,11 +1,15 @@
 plugins {
   `kotlin-dsl`
+  `java-gradle-plugin`
 }
 
 dependencies {
   implementation(libs.build.paperweight)
   implementation(libs.build.shadow)
   implementation(libs.build.spotless)
+  implementation(libs.build.accesswidener)
+  implementation(libs.build.tiny.remapper)
+  implementation(libs.build.zt.zip)
 }
 
 dependencies {
@@ -23,6 +27,14 @@ kotlin {
       kotlinOptions {
         jvmTarget = "11"
       }
+    }
+  }
+}
+gradlePlugin {
+  plugins {
+    create("IgnitePlugin") {
+      id = "plugin.IgnitePlugin"
+      implementationClass = "plugin.IgnitePlugin"
     }
   }
 }
