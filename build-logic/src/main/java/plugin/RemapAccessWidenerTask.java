@@ -22,10 +22,10 @@ public class RemapAccessWidenerTask extends DefaultTask {
   public void remapAccessWidenerTask() throws IOException {
     Project project = getProject();
     File inputJar = ((RemapJar) getProject().getTasks().getByName("reobfJar")).getOutputJar().get().getAsFile();
-    Path[] paths = ((RemapJar) getProject().getTasks().getByName("reobfJar")).getRemapClasspath().getFiles().stream().map(File::toPath).toList().toArray(new Path[0]);
+    Path[] paths = ((RemapJar) getProject().getTasks().getByName("reobfJar")).getRemapClasspath().getFiles().stream().map(File::toPath).toArray(Path[]::new);
     AccessWidenerFile accessWidenerFile = AccessWidenerFile.fromModJar(inputJar.toPath());
     if (accessWidenerFile == null) {
-      throw new RuntimeException("Input jar not found!");
+      throw new RuntimeException("Please run reobfJar Task!");
     }
     byte[] input = accessWidenerFile.content();
     String from = "mojang+yarn";
